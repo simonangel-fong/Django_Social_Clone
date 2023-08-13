@@ -7,23 +7,21 @@
 - Identifier:
   - AppAccounts: Application of account management
   - SocialMediumProject: project setting
-  - SocialMediumApp: Application of web management, such as home
+
+---
+
+## 2. Create project
+
+- [x] startproejct: SocialMediumProject
+- [x] template
+- [x] base html
+- [x] static file
 
 ---
 
 ## 1. Prerequisite
 
 - [x] Github: https://github.com/simonangel-fong/django-social-clone-project
-- [ ] Python venv
-- [ ] pip: django
-
----
-
-## 2. Create project
-
-- [ ] startproejct: SocialMediumProject
-- [ ] startapp: SocialMediumApp
-- [ ] template
-- [ ] base html
-- [ ] static file
+- [x] Python venv
+- [x] pip: django
 
