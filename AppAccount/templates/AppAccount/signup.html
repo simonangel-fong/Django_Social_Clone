@@ -1,0 +1,30 @@
+{% extends "layout/base.html" %} {% block header %}
+<header>
+  <h1 class="heading text-center">{{heading}}</h1>
+  <hr />
+</header>
+{% endblock %} {% block main %}
+<div class="row p-4">
+  <div class="col-8 mx-auto">
+    {% load django_bootstrap5 %}
+    <form method="post">
+      {% csrf_token %} {%bootstrap_form form%}
+      <div class="d-flex py-3">
+        <a class="btn btn-secondary rounded-pill" href="{% url 'home' %}"
+          >Cancel</a
+        >
+        <button
+          class="btn btn-outline-secondary rounded-pill ms-auto"
+          type="reset"
+        >
+          Reset
+        </button>
+        <button class="btn btn-primary rounded-pill ms-3" type="submit">
+          Sign up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %} {% block js %} {% endblock %}

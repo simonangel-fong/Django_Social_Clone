@@ -1,0 +1,36 @@
+{% extends "layout/base.html" %} {% block header %}
+<header>
+  <h1 class="heading text-center">{{heading}}</h1>
+  <hr />
+</header>
+{% endblock %} {% block main %}
+<div class="row p-3 m-3">
+  <div class="col-4 px-0 mx-auto">
+    {% if form.errors %}
+    {% endif %} {% load django_bootstrap5 %}
+    <form method="post">
+      {% csrf_token %} {% bootstrap_form form %}
+      <div class="row py-3">
+        <button class="btn btn-primary w-100 py-2 my-1" type="submit">
+          Login
+        </button>
+        <a
+          class="btn btn-outline-secondary w-100 py-2 my-1"
+          href="{% url 'home' %}"
+          >Cancel</a
+        >
+        <input type="hidden" name="next" value="{{ next }}" />
+      </div>
+    </form>
+
+    <hr />
+    <p class="text-body-secondary pb-3">
+      Do not have an account?
+      <a class="text-body-secondary" href="{% url 'accounts:signup' %}"
+        >Signup</a
+      >
+    </p>
+  </div>
+</div>
+
+{% endblock %} {% block js %} {% endblock %}

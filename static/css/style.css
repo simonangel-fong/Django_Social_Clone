@@ -1,3 +1,13 @@
-h1 {
-  color: red;
+body {
+  background-color: #f8f9fa;
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  padding-top: 80px;
+  min-height: 500px;
+}
+
+footer {
+  background-color: #e9ecef !important;
 }

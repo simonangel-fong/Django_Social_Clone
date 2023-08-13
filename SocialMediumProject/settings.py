@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
+    'AppAccount',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +81,24 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# Authentication
+
+# LOGIN_REDIRECT_URL:
+# Default: '/accounts/profile/'
+# The URL or named URL pattern where requests are redirected after login when the LoginView doesn’t get a next GET parameter.
+LOGIN_REDIRECT_URL = '/accounts/profile/'
+
+# LOGIN_URL
+# Default: '/accounts/login/'
+# The URL or named URL pattern where requests are redirected for login
+LOGIN_URL = '/accounts/login/'
+
+# LOGOUT_REDIRECT_URL:
+# default: none
+# The URL or named URL pattern where requests are redirected after logout if LogoutView doesn’t have a next_page attribute.
+LOGOUT_REDIRECT_URL = "/accounts/login/"
 
 
 # Password validation

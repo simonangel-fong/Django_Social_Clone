@@ -10,6 +10,22 @@
 
 ---
 
+## 3. Account management
+
+- [x] startapp: AppAccount
+- [x] model
+- [x] form
+- [x] view: built-in views + .views
+- [x] pip: pip install django-bootstrap5
+- [x] template
+- [x] functionalities:
+  - [x] create
+  - [x] profile
+  - [x] login
+  - [x] logout
+
+---
+
 ## 2. Create project
 
 - [x] startproejct: SocialMediumProject
