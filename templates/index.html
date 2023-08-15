@@ -3,4 +3,45 @@
   <h1 class="heading text-center">{{heading}}</h1>
   <hr />
 </header>
-{% endblock %} {% block main %} {% endblock %} {% block js %} {% endblock %}
+{% endblock %} {% block main %}
+<div class="container py-3">
+  <div class="row">
+    <div class="col-md-9">
+      <!-- this is a meta html. It will be used in blog list view both for visitor and author  -->
+      <div class="container">
+        <div class="row">
+          {% for blog in blog_list %}
+          <div class="col-12 py-3 border-bottom">
+            <h2>
+              {% if user.is_authenticated %}
+              <a
+                class="text-body-secondary"
+                href="{% url 'AppBlog:detail' blog.pk %}"
+              >
+                {{blog.title}}</a
+              >
+              {% else %}
+              <a
+                class="text-body-secondary"
+                href="{% url 'AppBlog:detail' pk=blog.pk %}"
+              >
+                {{blog.title}}</a
+              >
+              {% endif %}
+            </h2>
+            <small class="fs-6 text-body-secondary mb-2">
+              {% if user.is_authenticated %} By
+              <a href="#">{{blog.author}}</a> {% else %} By
+              <a href="#">{{blog.author}}</a>
+              {% endif %} {{blog.last_modified_time|date:'Y-m-d G:i '}}
+            </small>
+            <div class="py-3">{{blog.content|safe|truncatewords_html:64}}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block js %} {% endblock %}

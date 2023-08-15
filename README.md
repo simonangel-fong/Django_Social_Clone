@@ -2,11 +2,37 @@
 
 
 - A repository of a django project to learn html, python, and django by building a clone social medium web
+
+- Social medium: a medium for blogs
+  - visitor can browse all blogs and comment
+  - only registered user can comment a blog
+  - only author can create, edit,delete blog
+  - Each Blog has a topic.
+  - Topic control by admin
+  - Blog status: draft, published
+
 - Ref: [Udemy - Python and Django Full Stack Web Developer Bootcamp: final project](https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/learn/lecture/7118956#overview)
 
-- Identifier:
-  - AppAccounts: Application of account management
-  - SocialMediumProject: project setting
+---
+
+## 5. Topic
+
+
+---
+
+## 4. Blog CRUD
+
+- [x] StartApp: AppBlog
+- [x] model
+- [x] form
+- [x] View+url
+  - [x] List
+  - [x] Detail
+  - [x] Create
+  - [x] Update
+  - [x] Delete
+- [x] Home: visitor
+- [x] Blog Draft
 
 ---
 

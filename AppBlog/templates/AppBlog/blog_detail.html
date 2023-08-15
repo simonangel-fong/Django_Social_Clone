@@ -1,0 +1,55 @@
+{% extends "layout/base.html" %} {% block header %}
+<header>
+  <h1 class="text-body-secondary text-center">{{blog.title|upper}}</h1>
+  <hr />
+</header>
+{% endblock %} {% block main %}
+
+<div class="container">
+  <div class="row pb-4">
+    <div class="col-12">
+      <h4 class="fs-6 text-body-secondary text-center mb-2">
+        By
+        <a class="text-body-secondary fw-bold" href="#">{{blog.author}}</a>
+        Updated at
+        <span class="fw-bold"
+          >{{blog.last_modified_time|date:'Y-m-d G:i'}}
+        </span>
+      </h4>
+    </div>
+  </div>
+
+  <div class="row py-2">
+    <div class="col-12" style="min-height: 200px">{{blog.content|safe}}</div>
+  </div>
+</div>
+
+<hr class="py-2" />
+
+<div class="d-flex py-2">
+  {% if user.is_authenticated and user.username == blog.author.username %}
+  <a
+    href="{% url 'AppBlog:panel' %}"
+    class="btn btn-outline-secondary rounded-pill"
+    >Back</a
+  >
+  <a
+    href="{% url 'AppBlog:update' pk=blog.pk %}"
+    class="btn btn-outline-primary rounded-pill ms-auto"
+    >update</a
+  >
+  <a
+    href="{% url 'AppBlog:delete' pk=blog.pk %}"
+    class="btn btn-outline-danger rounded-pill ms-2"
+    >Delete</a
+  >
+  {% else %}
+  <a
+    href="{% url 'home' %}"
+    class="btn btn-outline-secondary rounded-pill"
+    >Back</a
+  >
+  {% endif %}
+</div>
+
+{% endblock %} {% block js %} {% endblock %}
