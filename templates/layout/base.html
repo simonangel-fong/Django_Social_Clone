@@ -51,10 +51,22 @@
     <!-- <link rel="stylesheet" href="{% static 'js/main.js' %}" /> -->
   </head>
   <body>
+    <!-- navbar -->
     {% include "layout/navbar.html" %}
-    <main class="container main">
-      {% block header %}{% endblock %}{% block main %} {% endblock %}
-    </main>
-    {% include "layout/foot.html" %} {% block js %}{% endblock %}
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 col-md-1 p-0 border-end border-bottom border-1">
+          <!-- sidebar -->
+          {% include "layout/sidebar.html" %}
+        </div>
+        <div class="col-lg-10 col-md-11">
+          <!-- main -->
+          <main>
+            {% block header %}{% endblock %} {% block main %}{% endblock %}
+          </main>
+        </div>
+      </div>
+    </div>
+    {% block js %}{% endblock %}
   </body>
 </html>

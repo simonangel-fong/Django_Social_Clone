@@ -1,0 +1,72 @@
+<div
+  class="d-flex flex-column flex-shrink-0 p-3 vh-90 position-relative"
+  style="min-height: 90vh"
+>
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a
+        class="nav-link link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover p-2 ms-3"
+        href="{% url 'home' %}"
+      >
+        <i class="bi bi-house-door fs-5 me-2"></i>
+        Home
+      </a>
+    </li>
+    <li class="nav-item">
+      {% if user.is_authenticated %}
+      <a
+        class="nav-link link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover p-2 ms-3"
+        href="{% url 'AppAccount:profile'  %}"
+      >
+        <i class="bi bi-gear fs-5 me-2"></i>
+        Profile
+      </a>
+      {% endif %}
+    </li>
+    <hr />
+    <li class="nav-item">
+      <a
+        class="nav-link link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover p-2 ms-3"
+        href="{% url 'AppBlog:list'  %}"
+      >
+        <i class="bi bi-file-earmark-text fs-5 me-2"></i>
+        Blog
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover p-2 ms-3"
+        href="{% url 'AppBlog:hashtag_list'  %}"
+      >
+        <i class="bi bi-hash fs-5 me-2"></i>
+        Hashtag
+      </a>
+    </li>
+  </ul>
+  {% if user.is_authenticated %}
+  <hr />
+  <div class="dropdown ms-4">
+    <a
+      href="#"
+      class="d-flex align-items-center text-body-secondary text-decoration-none dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <strong>{{user.username}}</strong>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+      <li>
+        <a class="dropdown-item" href="{% url 'AppAccount:profile' %}"
+          >Profile</a
+        >
+      </li>
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <a class="dropdown-item" href="{% url 'AppAccount:logout' %}">
+          Sign out
+        </a>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+</div>

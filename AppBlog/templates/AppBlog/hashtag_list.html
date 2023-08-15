@@ -1,0 +1,29 @@
+{% extends "layout/base.html" %} {% block header %}
+<header class="p-4">
+  <div class="d-flex">
+    <h1 class="text-body-secondary text-center">{{heading}}</h1>
+    <a
+      class="btn btn-warning rounded-pill mx-3 align-self-center ms-auto"
+      href="{% url 'AppBlog:hashtag_create' %}"
+      >New Hashtag</a
+    >
+  </div>
+  <hr />
+</header>
+{% endblock %} {% block main %}
+
+<div class="container">
+  <div class="d-flex">
+    {% for hashtag in hashtag_list %}
+
+    <a
+      class="btn btn-primary btn-sm rounded-pill mx-2"
+      href="{% url 'AppBlog:hashtag_detail' hashtag.slug %}"
+    >
+      {{hashtag.name}}
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %} {% block js %} {% endblock %}

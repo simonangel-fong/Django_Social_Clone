@@ -1,21 +1,21 @@
 {% extends "layout/base.html" %} {% block header %}
-<header>
-  <h1 class="text-body-secondary text-center">{{heading}}</h1>
+<header class="pt-4">
+  <h1 class="text-body-secondary">{{heading}}</h1>
   <hr />
 </header>
 {% endblock %} {% block main %}
+
 <div class="container p-4">
-  <form method="post">
-    {% csrf_token %}
-    <div class="row">
-      <div class="col-12 p-3" style="min-height: 200px">
-        <p class="fs-4">
-          Are you sure you want to delete <u>{{ object }} </u>?
+  <div class="row">
+    <div class="col-9 ">
+      <form method="post">
+        {% csrf_token %}
+        <p class="fs-5 vh-50">
+          Are you sure you want to delete the following? <br />
+          <u>{{ object }} </u>
         </p>
         {{ form }}
-      </div>
-      <hr />
-      <div class="col-12 p-3">
+        <hr />
         <div class="d-flex">
           <a
             href="{% url 'AppBlog:detail' pk=object.pk %}"
@@ -29,9 +29,9 @@
             Confirm
           </button>
         </div>
-      </div>
+      </form>
     </div>
-  </form>
+  </div>
 </div>
 
 {% endblock %} {% block js %} {% endblock %}

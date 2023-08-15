@@ -1,16 +1,17 @@
 {% extends "layout/base.html" %} {% block header %}
-<header></header>
+<header class="pt-4">
+  <h2>{{heading}}</h2>
+  <hr />
+</header>
 {% endblock %} {% block main %}
 <div class="container py-3">
   <div class="row">
-    <div class="col-md-8 p-4 border-bottom">
-      {% for blog in blog_list %}
+    {% for blog in blog_list %}
+    <div class="col-md-8 py-4 border-bottom">
       <div class="d-flex align-items-center">
         <i class="bi bi-at fs-4"></i>
         <a href="#">{{blog.author}}</a>
-        <small class="ms-3">
-          {{blog.last_modified_time|date:'Y-m-d G:i '}}</small
-        >
+        <small class="ms-3"> {{blog.last_modified_time|date:'Y-m-d G:i '}}</small>
       </div>
 
       <h4 class="mb-1">
@@ -25,10 +26,8 @@
       <div class="py-1">
         {{blog.content|safe|linebreaks|truncatewords_html:64}}
       </div>
-      <hr />
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </div>
-
 {% endblock %} {% block js %} {% endblock %}

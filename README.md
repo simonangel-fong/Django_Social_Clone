@@ -12,11 +12,31 @@
   - Blog status: draft, published
 
 - Ref: [Udemy - Python and Django Full Stack Web Developer Bootcamp: final project](https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/learn/lecture/7118956#overview)
+  - Using CBV
+  - Group model as many-to-many key.
+
+
 
 ---
 
-## 5. Topic
+## Miscellaneous
 
+- [ ] toolbar
+- [ ] Note
+  - [ ] toolbar
+  - [ ] pip: misaka
+- [ ] remain video
+  - [ ] deploy
+  - [ ] advanced
+
+---
+
+## 5. Hashtag
+
+- [x] model
+- [x] admin
+- [x] template: base
+- [x] debug: home(hashtag)
 
 ---
 

@@ -1,12 +1,11 @@
 <nav
-  class="navbar navbar-expand-lg bg-body-tertiary fixed-top"
-  data-bs-theme="dark"
+  class="navbar navbar-expand-lg bg-light-subtle border-bottom border-2 vh-10 sticky-top shadow-sm"
 >
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'home' %}">
-      <i class="bi bi-stars text-warning"></i>
-      Argus
-    </a>
+      <i class="bi bi-journal-bookmark"></i>
+      Blog Project</a
+    >
     <button
       class="navbar-toggler"
       type="button"
@@ -21,47 +20,33 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li> -->
       </ul>
-
-      {% if not user.is_authenticated %}
-      <a class="btn btn-sm btn-warning" href="{% url 'AppAccount:login' %}"
-        >Login</a
-      >
-      {% else %}
+      <!-- management panel -->
+      {% if user.is_authenticated %}
       <ul class="navbar-nav mb-2 mb-lg-0">
-        <li class="nav-item dropstart">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="bi bi-person-circle"></i>
+        <span class="navbar-text"> Hello, {{user.username}} </span>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'AppAccount:profile' %}">
+            <u>Profile Panel</u>
           </a>
-          <ul class="dropdown-menu">
-            <li><h6 class="dropdown-header">{{user.username}}</h6></li>
-            <li>
-              <a class="dropdown-item" href="{% url 'AppAccount:profile' %}"
-                >Profile</a
-              >
-            </li>
-            <li>
-              <a class="dropdown-item" href="{% url 'AppBlog:panel' %}"
-                >Blog</a
-              >
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" href="{% url 'AppAccount:logout' %}"
-                >Logout</a
-              >
-            </li>
-          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'AppBlog:panel' %}">
+            <u>Blog Panel</u>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'AppAccount:logout' %}">
+            <u>Signout</u>
+          </a>
         </li>
       </ul>
+      {% else %}
+      <a class="btn btn-sm btn-warning" href="{% url 'AppAccount:login' %}">
+        Signin
+      </a>
       {% endif %}
     </div>
   </div>

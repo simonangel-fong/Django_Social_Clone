@@ -9,4 +9,4 @@ class UserAccount(models.User, models.PermissionsMixin):
     # Permission Class: an abstract model that has attributes and methods to cutomize a user model
     def __str__(self):
         # self.username is a attribute of the super class User.
-        return "@{}".format(self.username)
+        return self.username
