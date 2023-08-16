@@ -23,5 +23,6 @@ urlpatterns = [
     path("accounts/", include("AppAccount.urls")),
     path("blog/", include("AppBlog.urls")),
     path('admin/', admin.site.urls),
-    path("test/", TestView.as_view(), name="test")
-    ]
+    path("test/", TestView.as_view(), name="test"),
+    path("debug/", include("debug_toolbar.urls")),
+]

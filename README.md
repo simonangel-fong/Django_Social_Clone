@@ -15,20 +15,29 @@
   - Using CBV
   - Group model as many-to-many key.
 
+---
 
+## Advanced
+
+- [ ] message
+- [ ] email
+- [ ] deployment: AWS ES2, eb
+- [ ] note/lab: CBV default value
 
 ---
 
 ## Miscellaneous
 
-- [ ] toolbar
-- [ ] Note
-  - [ ] toolbar
-  - [ ] pip: misaka
-- [ ] remain video
-  - [ ] deploy
-  - [ ] advanced
-
+- [x] toolbar
+- [x] Note
+  - [x] toolbar
+  - [x] misaka
+  - [x] django-bootstrap5
+- [x] remain video
+  - [x] admin
+  - [x] deploy
+- [x] Note
+  - [x] ModelAdmin
 ---
 
 ## 5. Hashtag
