@@ -1,9 +1,9 @@
 # django-social-clone-project
 
-
 - A repository of a django project to learn html, python, and django by building a clone social medium web
 
 - Social medium: a medium for blogs
+
   - visitor can browse all blogs and comment
   - only registered user can comment a blog
   - only author can create, edit,delete blog
@@ -14,6 +14,48 @@
 - Ref: [Udemy - Python and Django Full Stack Web Developer Bootcamp: final project](https://www.udemy.com/course/python-and-django-full-stack-web-developer-bootcamp/learn/lecture/7118956#overview)
   - Using CBV
   - Group model as many-to-many key.
+
+---
+
+- Home
+
+![blog](<./pic/blog%20(1).png>)
+
+- Login
+
+![blog](<./pic/blog%20(2).png>)
+
+![blog](<./pic/blog%20(3).png>)
+
+- Add new Hashtag
+
+![blog](<./pic/blog%20(5).png>)
+
+![blog](<./pic/blog%20(6).png>)
+
+- Add new Draft
+
+![blog](<./pic/blog%20(4).png>)
+
+![blog](<./pic/blog%20(7).png>)
+
+![blog](<./pic/blog%20(8).png>)
+
+![blog](<./pic/blog%20(9).png>)
+
+![blog](<./pic/blog%20(10).png>)
+
+![blog](<./pic/blog%20(11).png>)
+
+- Publish new Blog
+
+![blog](<./pic/blog%20(12).png>)
+
+![blog](<./pic/blog%20(13).png>)
+
+- Select Blogs by hashtab
+
+![blog](<./pic/blog%20(14).png>)
 
 ---
 
@@ -38,6 +80,7 @@
   - [x] deploy
 - [x] Note
   - [x] ModelAdmin
+
 ---
 
 ## 5. Hashtag
@@ -95,4 +138,3 @@
 - [x] Github: https://github.com/simonangel-fong/django-social-clone-project
 - [x] Python venv
 - [x] pip: django
-
